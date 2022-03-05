@@ -11,26 +11,31 @@ var App = {
   initialize: function() {
     App.username = window.location.search.substr(10);
 
+    // these render items to the screen
     FormView.initialize();
     RoomsView.initialize();
-    MessagesView.initialize();
+    MessagesView.initialize(); // 1
 
     // Fetch initial batch of messages
     App.startSpinner();
+    // wont stop spinning until we deal with fetch
     App.fetch(App.stopSpinner);
 
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
   },
 
+  // reads - need to deal w/GET
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
+      console.log('this is messages from fetch', data);
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+      Messages._data.push(data);
     });
+
   },
 
   startSpinner: function() {
