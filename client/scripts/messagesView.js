@@ -13,17 +13,10 @@ var MessagesView = {
     console.log('Initialized has been called');
   },
 
-  render: function() {
+  render: function(msg) {
     // TODO: Render _all_ the messages.
-    // create a varaibel to hold App.fetch();
-    var messages = App.fetch();
-    console.log('Messages from messagesView.render ', messages);
-    // Loop through the messages array from App.fetch
-    for (var i = 0; i < 9; i++) {
-      // Within the loop, call renderMessage on each index of the array
-      MessagesView.renderMessage(messages[i]);
-      // App.fetch()[i].text
-    }
+
+    MessagesView.$chats.append(msg);
 
   },
 

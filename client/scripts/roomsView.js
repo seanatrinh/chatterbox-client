@@ -5,14 +5,18 @@ var RoomsView = {
 
   $button: $('#rooms button'),
   $select: $('#rooms select'),
+  $dropdown: $('#dropdown'),
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+    // RoomsView.render();
   },
 
-  render: function() {
+  render: function(templatizedRoom) {
     // TODO: Render out the list of rooms.
+
+    RoomsView.$dropdown.append(templatizedRoom);
   },
 
   renderRoom: function(roomname) {
@@ -25,6 +29,7 @@ var RoomsView = {
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
+    //message.roomname = message.text
   }
 
 };

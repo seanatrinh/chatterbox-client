@@ -69,6 +69,11 @@ form input[type=text] {
     font-weight: 800;
 }
 
+.chat .createdAt {
+    font-size: 10px;
+    font-style: italic;
+}
+
 .chat:hover {
     background-color: #ddd;
 }
